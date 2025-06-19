@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FaSun, FaMoon, FaGithub, FaExternalLinkAlt, FaLinkedin, FaEnvelope, FaPhone, FaGlobe } from 'react-icons/fa'
 import { ThemeProvider, useTheme } from './context/ThemeContext'
 import ProfessionalSkills from './components/ProfessionalSkills'
+import Contact from './components/Contact'
 import './App.css'
 
 const navigation = [
@@ -175,6 +176,17 @@ const leadership = [
     ],
   },
 ];
+
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function Navbar() {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -437,53 +449,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Let's Work Together</h2>
-          <p className="text-lg mb-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            I'm currently open to full-time roles in cybersecurity, data security, or DevSecOps. Let's connect!
-          </p>
-          <a
-            href="#contact-form"
-            className="inline-block px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Contact Me
-          </a>
-          
-          <div className="mt-12 flex justify-center space-x-6">
-            <a
-              href="https://www.linkedin.com/in/rakeshvasa/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'
-              } transition-colors duration-200`}
-            >
-              <FaLinkedin className="text-2xl" />
-            </a>
-            <a
-              href="https://github.com/vasarakesh"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'
-              } transition-colors duration-200`}
-            >
-              <FaGithub className="text-2xl" />
-            </a>
-            <a
-              href="mailto:vasarakesh1290@gmail.com"
-              className={`p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'
-              } transition-colors duration-200`}
-            >
-              <FaEnvelope className="text-2xl" />
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
@@ -739,99 +704,24 @@ function Education() {
   );
 }
 
-function Contact() {
-  const { isDarkMode } = useTheme();
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-text-light dark:text-text-dark mb-4">
-            Get in Touch
-          </h1>
-          <p className="text-xl text-text-light/80 dark:text-text-dark/80">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm">
-            <h2 className="text-2xl font-semibold text-text-light dark:text-text-dark mb-6">Contact Information</h2>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <FaEnvelope className="w-5 h-5 text-primary-light dark:text-primary-dark" />
-                <a href="mailto:rakeshvasa@gmail.com" className="text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors">
-                  rakeshvasa@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FaPhone className="w-5 h-5 text-primary-light dark:text-primary-dark" />
-                <a href="tel:+1234567890" className="text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors">
-                  +1 (234) 567-890
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FaGlobe className="w-5 h-5 text-primary-light dark:text-primary-dark" />
-                <span className="text-text-light dark:text-text-dark">
-                  Glassboro, New Jersey
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-card-light dark:bg-card-dark p-6 rounded-lg shadow-sm">
-            <h2 className="text-2xl font-semibold text-text-light dark:text-text-dark mb-6">Connect With Me</h2>
-            <div className="space-y-4">
-              <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
-              >
-                <FaLinkedin className="w-5 h-5" />
-                <span>LinkedIn Profile</span>
-              </a>
-              <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-colors"
-              >
-                <FaGithub className="w-5 h-5" />
-                <span>GitHub Profile</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-text-light/80 dark:text-text-dark/80">
-            Available for freelance work and full-time positions. Let's create something amazing together!
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+      <div className="min-h-screen bg-[#0E1A25] flex flex-col">
+        <ScrollToTop />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<ProfessionalSkills />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<ProfessionalSkills />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        {/* Only show Contact component on non-contact pages */}
+        {window.location.pathname !== '/contact' && <Contact />}
       </div>
     </ThemeProvider>
   );
