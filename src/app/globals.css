@@ -4,22 +4,78 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 249, 250, 251;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Light theme overrides */
+.from-gray-50,
+.to-gray-50,
+.from-white,
+.to-white {
+  --tw-gradient-from: #ffffff;
+  --tw-gradient-to: #f9fafb;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+.text-gray-800 {
+  color: #1f2937 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.border-gray-100 {
+  border-color: #f3f4f6 !important;
+}
+
+.bg-blue-50 {
+  background-color: #eff6ff !important;
+}
+
+.text-blue-700 {
+  color: #1d4ed8 !important;
+}
+
+/* Ensure light backgrounds */
+[class*="from-white"],
+[class*="to-white"],
+[class*="from-gray-50"],
+[class*="to-gray-50"] {
+  background-image: linear-gradient(to bottom, #ffffff, #f9fafb) !important;
 } 

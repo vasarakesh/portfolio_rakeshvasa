@@ -4,6 +4,16 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
+    title: 'Network Administrator',
+    company: 'CGPC Solutions, Philadelphia',
+    period: 'Present',
+    achievements: [
+      'Configure firewalls, servers, and routers; setup and maintain network infrastructure',
+      'Handle backups and configure backup systems including Synology NAS backups',
+      'Maintain and monitor cybersecurity incidents and handle everyday IT tickets',
+    ],
+  },
+  {
     title: 'ACSUS Lab Researcher',
     company: 'Rowan University',
     period: 'Jan 2025 – May 2025',

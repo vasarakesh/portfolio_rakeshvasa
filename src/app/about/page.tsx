@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const education = [
   {
@@ -44,6 +45,24 @@ export default function About() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-bold text-gray-900 mb-12 text-center">About Me</h1>
+
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-600">
+              <Image
+                src="/Rakesh.jpg"
+                alt="Rakesh Vasa"
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}

@@ -9,7 +9,7 @@ const projects = [
     description: 'Built a decentralized system in Rust on 42 Raspberry Pis, enabling smart contract validation without blockchain overhead.',
     achievements: ['Achieved 13.3 req/s throughput', '<20s latency across 125 test cases'],
     technologies: ['Rust', 'Distributed Systems', 'Network Security'],
-    github: '#',
+    github: 'https://github.com/vasarakesh',
     demo: '#',
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     description: 'Used ML (Random Forest, KNN, J48) + SMOTE to achieve 99.5% accuracy in academic predictions.',
     achievements: ['Published in IEEE', 'Advanced feature engineering'],
     technologies: ['Python', 'Machine Learning', 'SMOTE', 'Scikit-learn'],
-    github: '#',
+    github: 'https://github.com/vasarakesh',
     demo: '#',
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     description: 'Built Flask dashboard + PowerShell scripts for license validation and ITIL-based approval workflows.',
     achievements: ['Dockerized pipeline', 'CI/CD integration'],
     technologies: ['Python', 'Docker', 'Flask', 'PowerShell'],
-    github: '#',
+    github: 'https://github.com/vasarakesh',
     demo: '#',
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     description: 'Academic simulation of IRP, DPS, SOPs for a mid-size business.',
     achievements: ['Risk assessment', 'Budget alignment with NIST, ISO 27001'],
     technologies: ['NIST Framework', 'Security Policies', 'Risk Assessment'],
-    github: '#',
+    github: 'https://github.com/vasarakesh',
     demo: '#',
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     description: 'MVP with sign-up, ride-match, push notifications for campus transportation.',
     achievements: ['Real-time ride matching', 'Push notifications', 'User authentication'],
     technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
-    github: '#',
+    github: 'https://github.com/vasarakesh',
     demo: 'https://buddyride-qs9w.onrender.com/',
   },
 ];
