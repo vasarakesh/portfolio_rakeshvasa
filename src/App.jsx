@@ -18,6 +18,17 @@ const navigation = [
 
 const experience = [
   {
+    title: 'Network Administrator',
+    company: 'CGPC Solutions',
+    location: 'Philadelphia',
+    period: 'Present',
+    points: [
+      'Configure firewalls, servers, and routers; setup and maintain network infrastructure',
+      'Handle backups and configure backup systems including Synology NAS backups',
+      'Maintain and monitor cybersecurity incidents and handle everyday IT tickets',
+    ],
+  },
+  {
     title: 'ACSUS lab researcher',
     company: 'Rowan University',
     location: 'New Jersey',

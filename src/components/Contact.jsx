@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaEnvelope, FaPhone, FaGlobe, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaGlobe, FaLinkedin, FaGithub } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -36,15 +36,6 @@ const Contact = () => {
                   className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   vasarakesh1290@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FaPhone className="w-5 h-5 text-blue-400" />
-                <a 
-                  href="tel:+18565955178" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
-                >
-                  +1 (856) 595-5178
                 </a>
               </div>
               <div className="flex items-center space-x-3">
