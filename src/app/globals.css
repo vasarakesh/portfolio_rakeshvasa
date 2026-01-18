@@ -8,11 +8,12 @@
   --background-end-rgb: 249, 250, 251;
 }
 
+/* Disable dark mode to ensure light theme always shows */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 249, 250, 251;
   }
 }
 
