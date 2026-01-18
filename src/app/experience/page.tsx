@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { FaBriefcase, FaMapMarkerAlt, FaCalendar } from 'react-icons/fa';
 
 const experiences = [
   {
@@ -50,48 +51,55 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center">
             Professional Experience
           </h1>
-          <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
             Building secure systems and solving complex cybersecurity challenges
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 group"
+                className="interactive-card bg-gray-800/60 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-gray-700 hover:border-gray-600"
               >
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-3 mb-4">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 mb-6">
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-gray-200 transition-colors">
                       {exp.title}
                     </h3>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                      <p className="text-lg font-semibold text-blue-600">{exp.company}</p>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 text-gray-300">
+                      <div className="flex items-center gap-2">
+                        <FaBriefcase className="w-4 h-4 text-gray-400" />
+                        <span className="text-lg font-semibold">{exp.company}</span>
+                      </div>
                       {exp.location && (
                         <>
-                          <span className="hidden sm:inline text-gray-400">•</span>
-                          <p className="text-gray-600">{exp.location}</p>
+                          <span className="hidden sm:inline text-gray-600">•</span>
+                          <div className="flex items-center gap-2">
+                            <FaMapMarkerAlt className="w-4 h-4 text-gray-400" />
+                            <span>{exp.location}</span>
+                          </div>
                         </>
                       )}
                     </div>
                   </div>
                   <div className="flex-shrink-0">
-                    <span className="inline-block px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700/50 text-gray-200 rounded-lg text-sm font-medium border border-gray-600">
+                      <FaCalendar className="w-3 h-3" />
                       {exp.period}
-                    </span>
+                    </div>
                   </div>
                 </div>
                 <ul className="mt-6 space-y-3">
@@ -103,8 +111,8 @@ export default function Experience() {
                       transition={{ duration: 0.3, delay: index * 0.15 + i * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <span className="text-blue-600 mt-1.5 flex-shrink-0">▸</span>
-                      <span className="text-gray-700 leading-relaxed">{achievement}</span>
+                      <span className="text-white mt-1.5 flex-shrink-0 font-bold">▸</span>
+                      <span className="text-gray-300 leading-relaxed">{achievement}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -115,4 +123,4 @@ export default function Experience() {
       </div>
     </div>
   );
-} 
+}
