@@ -38,13 +38,13 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12 px-4"
           >
             <Link
-              href="#projects"
+              href="/projects"
               className="inline-flex items-center px-5 md:px-6 py-2.5 md:py-3 border border-transparent text-sm md:text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               View My Work
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center px-5 md:px-6 py-2.5 md:py-3 border border-gray-300 text-sm md:text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Contact Me
