@@ -57,15 +57,15 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Get In Touch</h1>
-          <p className="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">Get In Touch</h1>
+          <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-12 text-center max-w-2xl mx-auto px-4">
             I&apos;m always interested in new opportunities, collaborations, and interesting projects. 
             Feel free to reach out if you&apos;d like to discuss cybersecurity, cloud security, or any other tech topics!
           </p>
@@ -75,7 +75,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="flex justify-center space-x-4 mb-12"
+            className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12 px-4"
           >
             {socialProfiles.map((profile) => (
               <a
@@ -83,7 +83,7 @@ export default function Contact() {
                 href={profile.url}
                 target={profile.url.startsWith('http') ? '_blank' : '_self'}
                 rel={profile.url.startsWith('http') ? 'noopener noreferrer' : ''}
-                className={`${profile.color} text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center space-x-2`}
+                className={`${profile.color} text-white px-5 md:px-6 py-2.5 md:py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 active:scale-95`}
               >
                 <span>{profile.icon}</span>
                 <span>{profile.name}</span>
@@ -91,7 +91,7 @@ export default function Contact() {
             ))}
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -106,7 +106,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
-                    className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                    className="flex items-start space-x-4 p-4 md:p-5 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300"
                   >
                     <span className="text-2xl">{info.icon}</span>
                     <div className="flex-1">

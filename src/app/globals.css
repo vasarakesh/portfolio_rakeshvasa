@@ -27,6 +27,33 @@ body {
   }
 }
 
+/* Enhanced responsive typography */
+h1, h2, h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improved card hover effects */
+@media (hover: hover) {
+  .hover\:shadow-lg:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+}
+
 /* Light theme overrides */
 .from-gray-50,
 .to-gray-50,
